@@ -15,7 +15,7 @@ function render(){
 
 
 function on_key_event(event){
-    console.log("test");
+    console.log(event);
 }
 
 canvas.addEventListener("keyup", on_key_event);
