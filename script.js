@@ -2,6 +2,9 @@ let x = 0;
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
 
+audio = document.createElement("audio");
+audio.src ='blip.wav'
+
 function render(){
     x += 1;
 
@@ -13,8 +16,8 @@ function render(){
     window.requestAnimationFrame(render);
 }
 
-
 function on_key_event(event){
+    audio.play();
     console.log(event);
 }
 
