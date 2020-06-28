@@ -6,11 +6,17 @@
     <head>
         <title>Html5 Canvas</title> <!-- <title> of the document shown in the browser -->
         <link rel="stylesheet" href="./styles.css">
+        <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
     </head>
 
      <!-- contains the actual content to be displayed -->
     <body> 
-        <canvas id="myCanvas" width="400" height="400">
+        <div>
+            <canvas id="myCanvas" width="400" height="400">
+        </div>
+        <button onclick="playSound('blip')">blip.wav</button>
+        <button onclick="playSound('blip2')">blip2.wav</button>
+        <button onclick="playSound('blip3')">blip3.wav</button>
         <script type="text/javascript" src="./script.js"></script>
     </body>
 </html>

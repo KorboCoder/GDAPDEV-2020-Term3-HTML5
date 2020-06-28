@@ -2,9 +2,6 @@ let x = 0;
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
 
-audio = document.createElement("audio");
-audio.src ='blip.wav'
-
 function render(){
     x += 1;
 
@@ -17,7 +14,6 @@ function render(){
 }
 
 function on_key_event(event){
-    audio.play();
     console.log(event);
 }
 
@@ -29,3 +25,17 @@ canvas.setAttribute('tabindex','0');
 canvas.focus();
 
 window.requestAnimationFrame(render);
+
+function init_sound(json){
+    createjs.Sound.initializeDefaultPlugins();
+    createjs.Sound.alternateExtensions = ["mp3"];
+    createjs.Sound.registerSounds([json], "./");
+}
+
+fetch("./output.json")
+.then(response => response.json())
+.then(init_sound);
+
+function playSound(key){
+    createjs.Sound.play(key);
+}
