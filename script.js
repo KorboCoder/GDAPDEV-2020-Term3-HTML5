@@ -26,3 +26,5 @@ canvas.addEventListener( "keydown", on_key_event);
     canvas.setAttribute('tabindex', '0');
     canvas.focus();
 }
+
+window.requestAnimationFrame(render);
