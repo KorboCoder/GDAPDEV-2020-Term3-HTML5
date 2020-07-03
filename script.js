@@ -23,12 +23,6 @@ function on_key_event(event){
     console.log(event);
 }
 
- // hack to focus on canvas object
-function focus_on_canvas(){
-    canvas.setAttribute('tabindex', '0');
-    canvas.focus();
-}
-
 canvas.addEventListener("keyup", on_key_event);
 canvas.addEventListener( "keydown", on_key_event);
 
