@@ -32,8 +32,6 @@ function focus_on_canvas(){
     canvas.focus();
 }
 
-window.requestAnimationFrame(render);
-
 function init_sound(json){
     createjs.Sound.initializeDefaultPlugins();
     createjs.Sound.alternateExtensions = ["mp3"];
