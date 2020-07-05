@@ -7,8 +7,16 @@ let x = 0;
 let bg_img = new Image();
 bg_img.src = "./bg_grass.png"
 
-let bitmap = new createjs.Bitmap(bg_img);
-stage.addChild(bitmap);
+let background = new createjs.Shape();
+stage.addChild(background);
+
+
+function render_bg(){
+    background.graphics.clear()
+    .beginBitmapFill(bg_img)
+    .drawRect(0,0,canvas.width,canvas.height);
+}
+bg_img.onload = render_bg
 
 let rect = new createjs.Shape();
 rect.graphics.beginFill("#FF0000").drawRect(0,0,150,75);
