@@ -3,11 +3,19 @@ let canvas = document.getElementById("myCanvas");
 let stage = new createjs.Stage("myCanvas");
 let x = 0;
 
+
+let bg_img = new Image();
+bg_img.src = "./bg_grass.png"
+
+let bitmap = new createjs.Bitmap(bg_img);
+stage.addChild(bitmap);
+
 let rect = new createjs.Shape();
 rect.graphics.beginFill("#FF0000").drawRect(0,0,150,75);
 rect.x = 0;
 rect.y = 0;
 stage.addChild(rect);
+
 
 createjs.Ticker.addEventListener("tick", render);
 createjs.Ticker.framerate = 300;
