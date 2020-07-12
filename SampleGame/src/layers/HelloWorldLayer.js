@@ -22,11 +22,11 @@ class HelloWorldLayer extends cc.Layer{
         this.addChild(helloLabel, 5);
 
         // add "HelloWorld" splash screen"
-        this.sprite = new cc.Sprite(res.HelloWorld_png);
-        this.sprite.attr({
+        this.logo = new Logo(res.HelloWorld_png);
+        this.logo.attr({
             x: size.width / 2,
             y: size.height / 2
         });
-        this.addChild(this.sprite, 0);
+        this.addChild(this.logo, 0);
     }
 }

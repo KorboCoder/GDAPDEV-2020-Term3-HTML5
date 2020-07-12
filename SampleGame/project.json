@@ -16,6 +16,7 @@
     "jsList": [
         "src/layers/HelloWorldLayer.js",
         "src/resource.js",
-        "src/scenes/HelloWorldScene.js"
+        "src/scenes/HelloWorldScene.js",
+        "src/sprites/Logo.js"
     ]
 }
