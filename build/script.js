@@ -1,0 +1,58 @@
+"use strict";
+
+var canvas = document.getElementById("myCanvas");
+var stage = new createjs.Stage("myCanvas");
+var x = 0;
+
+var bg_img = new Image();
+bg_img.src = "./bg_grass.png";
+
+var background = new createjs.Shape();
+stage.addChild(background);
+
+function render_bg() {
+    background.graphics.clear().beginBitmapFill(bg_img).drawRect(0, 0, canvas.width, canvas.height);
+}
+bg_img.onload = render_bg;
+
+var rect = new createjs.Shape();
+rect.graphics.beginFill("#FF0000").drawRect(0, 0, 150, 75);
+rect.x = 0;
+rect.y = 0;
+stage.addChild(rect);
+
+createjs.Ticker.addEventListener("tick", render);
+createjs.Ticker.framerate = 300;
+
+function render() {
+    x += 1;
+    rect.x = x;
+    stage.update();
+}
+
+function on_key_event(event) {
+    console.log(event);
+}
+
+canvas.addEventListener("keyup", on_key_event);
+canvas.addEventListener("keydown", on_key_event);
+
+function focus_on_canvas() {
+    // hack to focus on canvas object
+    canvas.setAttribute('tabindex', '0');
+    canvas.focus();
+}
+
+function init_sound(json) {
+    createjs.Sound.initializeDefaultPlugins();
+    createjs.Sound.alternateExtensions = ["mp3"];
+    createjs.Sound.registerSounds([json], "./");
+}
+
+fetch("./output.json").then(function (response) {
+    return response.json();
+}).then(init_sound);
+
+function playSound(key) {
+    createjs.Sound.play(key);
+}
