@@ -116,3 +116,5 @@ proj.win32/Release.*/
 
 # others
 publish
+node_modules
+.es5
