@@ -14,9 +14,8 @@
         "src/**/*.js"
     ],
     "jsList": [
-        "src/layers/HelloWorldLayer.js",
+        "src/layers/TitleLayer.js",
         "src/resource.js",
-        "src/scenes/HelloWorldScene.js",
-        "src/sprites/Logo.js"
+        "src/scenes/TitleScene.js"
     ]
 }

@@ -23,7 +23,11 @@
  ****************************************************************************/
 
 var res = {
-    HelloWorld_png : "res/HelloWorld.png",
+    pixel_font: {
+        type: "font",
+        name: "Pixel",
+        srcs: ["res/fonts/slkscr.ttf"]
+    }
 };
 
 var g_resources = [];
