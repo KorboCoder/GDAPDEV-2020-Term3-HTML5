@@ -8,14 +8,19 @@
     "renderMode": 0,
     "engineDir": "frameworks/cocos2d-html5",
     "modules": [
-        "cocos2d"
+        "cocos2d",
+        "extensions"
     ],
     "jsListOrder": [
         "src/**/*.js"
     ],
     "jsList": [
+        "src/components/ToMainScene.js",
+        "src/layers/PongLayer.js",
         "src/layers/TitleLayer.js",
         "src/resource.js",
-        "src/scenes/TitleScene.js"
+        "src/scenes/MainScene.js",
+        "src/scenes/TitleScene.js",
+        "src/sprites/Paddle.js"
     ]
 }

@@ -12,6 +12,7 @@ class TitleLayer extends cc.Layer{
         startLabel.x = size.width / 2;
         startLabel.y = size.height / 2 - 200;
         this.addChild(startLabel);
-
+        let toMainScene = new ToMainScene();
+        this.addComponent(toMainScene);
     }
 }
