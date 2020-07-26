@@ -18,6 +18,7 @@
         "src/components/ToMainScene.js",
         "src/layers/PongLayer.js",
         "src/layers/TitleLayer.js",
+        "src/layouts/VerticalLayout.js",
         "src/resource.js",
         "src/scenes/MainScene.js",
         "src/scenes/TitleScene.js",

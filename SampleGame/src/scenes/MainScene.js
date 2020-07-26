@@ -5,7 +5,9 @@ class MainScene extends cc.Scene{
     onEnter(){
         super.onEnter();
         
-        let pongLayer = new PongLayer();
-        this.addChild(pongLayer)
+        //let pongLayer = new PongLayer();
+        //this.addChild(pongLayer)
+        let testUI = new VerticalLayout();
+        this.addChild(testUI)
     }
 }
