@@ -16,6 +16,7 @@ class VerticalLayout extends ccui.VBox{
         
         let layoutParameter = new ccui.LinearLayoutParameter();
         layoutParameter.setGravity(ccui.LinearLayoutParameter.RIGHT);
+        layoutParameter.setMargin(-50, 20,0,0);
         text.setLayoutParameter(layoutParameter);
         this.addChild(text);
     }
