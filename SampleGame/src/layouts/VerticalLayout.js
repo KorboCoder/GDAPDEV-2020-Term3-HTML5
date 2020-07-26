@@ -13,6 +13,10 @@ class VerticalLayout extends ccui.VBox{
 
     createText(message){
         let text = new ccui.Text(message, "Pixel", 32);
+        
+        let layoutParameter = new ccui.LinearLayoutParameter();
+        layoutParameter.setGravity(ccui.LinearLayoutParameter.RIGHT);
+        text.setLayoutParameter(layoutParameter);
         this.addChild(text);
     }
 
