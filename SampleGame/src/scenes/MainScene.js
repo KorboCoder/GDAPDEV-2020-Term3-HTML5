@@ -7,7 +7,7 @@ class MainScene extends cc.Scene{
         
         //let pongLayer = new PongLayer();
         //this.addChild(pongLayer)
-        let testUI = new VerticalLayout();
+        let testUI = new HorizontalLayout();
         this.addChild(testUI)
     }
 }
