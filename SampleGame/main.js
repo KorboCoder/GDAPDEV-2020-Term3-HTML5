@@ -78,6 +78,10 @@
 
 cc.game.onStart = function(){
     var sys = cc.sys;
+    
+    cc._canvas.width = window.innerWidth;
+    cc._canvas.height = window.innerHeight;
+
     if(!sys.isNative && document.getElementById("cocosLoading")) //If referenced loading.js, please remove it
         document.body.removeChild(document.getElementById("cocosLoading"));
 
@@ -98,7 +102,12 @@ cc.game.onStart = function(){
     // cc.view.setOrientation(cc.ORIENTATION_PORTRAIT);
 
     // Setup the resolution policy and design resolution size
-    cc.view.setDesignResolutionSize(960, 640, cc.ResolutionPolicy.SHOW_ALL);
+    // Setup the resolution policy and design resolution size
+    cc.view.setDesignResolutionSize(cc._canvas.width, cc._canvas.height, cc.ResolutionPolicy.EXACT_FIT);
+
+    cc.view.setResizeCallback(function() {
+        cc.view.setDesignResolutionSize(cc._canvas.width, cc._canvas.height, cc.ResolutionPolicy.EXACT_FIT);
+    });
 
     // The game will be resized when browser size change
     cc.view.resizeWithBrowserSize(true);

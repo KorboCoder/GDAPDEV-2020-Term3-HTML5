@@ -15,6 +15,7 @@
         "src/**/*.js"
     ],
     "jsList": [
+        "src/components/FitToWindow.js",
         "src/components/ToMainScene.js",
         "src/layers/PongLayer.js",
         "src/layers/TitleLayer.js",
