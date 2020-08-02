@@ -21,6 +21,7 @@
         "src/layers/TitleLayer.js",
         "src/layouts/AbsoluteLayout.js",
         "src/layouts/HorizontalLayout.js",
+        "src/layouts/PercentPositioningLayout.js",
         "src/layouts/RelativeLayout.js",
         "src/layouts/VerticalLayout.js",
         "src/resource.js",
