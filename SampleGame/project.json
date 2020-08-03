@@ -12,9 +12,11 @@
         "extensions"
     ],
     "jsListOrder": [
+        "src/components/ResizeListener.js",
         "src/**/*.js"
     ],
     "jsList": [
+        "src/components/ResizeListener.js",
         "src/components/FitToParent.js",
         "src/components/FitToWindow.js",
         "src/components/ToMainScene.js",
