@@ -50,6 +50,11 @@ class NineSliceLayout extends ccui.Layout{
         popUp.addChild(button);
     }
     onClick(){
+        let scaleTo = new cc.ScaleTo(0.2,0.0);
+        let callFunc = new cc.callFunc(this.onFinish, this);
+        this.popUp.runAction(new cc.sequence(scaleTo, callFunc));
+    }
+    onFinish(){
         this.getParent().removeChild(this);
     }
 
