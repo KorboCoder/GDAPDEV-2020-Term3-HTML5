@@ -52,6 +52,7 @@ class NineSliceLayout extends ccui.Layout{
     onClick(){
         let scaleTo = new cc.ScaleTo(0.2,0.0);
         let callFunc = new cc.callFunc(this.onFinish, this);
+        scaleTo = new cc.EaseBackIn(scaleTo)
         this.popUp.runAction(new cc.sequence(scaleTo, callFunc));
     }
     onFinish(){
