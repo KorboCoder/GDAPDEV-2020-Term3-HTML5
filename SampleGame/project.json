@@ -21,6 +21,7 @@
         "src/components/EnableOnPortrait.js",
         "src/components/FitToParent.js",
         "src/components/FitToWindow.js",
+        "src/components/GameLayerResizer.js",
         "src/components/ToMainScene.js",
         "src/layers/PongLayer.js",
         "src/layers/TitleLayer.js",
