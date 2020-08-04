@@ -5,8 +5,8 @@ class MainScene extends cc.Scene{
     onEnter(){
         super.onEnter();
         
-        //let pongLayer = new PongLayer();
-        //this.addChild(pongLayer)
+        let pongLayer = new PongLayer();
+        this.addChild(pongLayer)
         let landscapeUI = new LandscapeLayout();
         let portraitUI = new PortraitLayout();
 
