@@ -28,6 +28,7 @@
         "src/layouts/AbsoluteLayout.js",
         "src/layouts/HorizontalLayout.js",
         "src/layouts/LandscapeLayout.js",
+        "src/layouts/NineSliceLayout.js",
         "src/layouts/PercentPositioningLayout.js",
         "src/layouts/PercentSizingLayout.js",
         "src/layouts/PortraitLayout.js",

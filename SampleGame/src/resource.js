@@ -30,7 +30,7 @@ var res = {
     },
     Button9Slice_png: "res/Button9Slice.png",
     Button9SliceSelected_png: "res/Button9SliceSelected.png",
-    Button9SliceDebug_png: "res/Button9SliceDebug.png"
+    Button9SliceLogo_png: "res/Button9SliceLogo.png"
 
 };
 
