@@ -54,4 +54,4 @@ async function redisStringCalls(){
     await client.flushdbAsync();
 }
 
-redisCalls();
+redisStringCalls();
