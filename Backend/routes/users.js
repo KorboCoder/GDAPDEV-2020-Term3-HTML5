@@ -20,7 +20,7 @@ router.post('/', async function(req, res) {
   await RedisClient.HSETAsync(user_key(new_id), "id", new_id);
   await RedisClient.HSETAsync(user_key(new_id), "name", new_user.name);
   res.statusCode = 201
-  res.send(new_user);
+  res.send({user: new_user});
 });
 
 module.exports = router;
