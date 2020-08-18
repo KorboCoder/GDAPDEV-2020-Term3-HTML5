@@ -73,4 +73,16 @@ router.patch('/:id', async function(req, res, next) {
 
 });
 
+router.delete('/:id', async function(req, res, next) {
+  let id = req.params.id
+  let success = await RedisClient.DELAsync(user_key(id))
+  if(!success){
+    res.sendStatus(404)
+    return;
+  }
+
+  res.sendStatus(204)
+
+});
+
 module.exports = router;
