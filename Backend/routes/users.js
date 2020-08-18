@@ -23,4 +23,15 @@ router.post('/', async function(req, res) {
   res.send({user: new_user});
 });
 
+router.get('/:id', async function(req, res, next) {
+  let id = req.params.id
+  let user = await RedisClient.HGETALLAsync(user_key(id));
+  if(user ==  null){
+    res.sendStatus(404)
+    return;
+  }
+  res.send({user: user});
+  
+});
+
 module.exports = router;
