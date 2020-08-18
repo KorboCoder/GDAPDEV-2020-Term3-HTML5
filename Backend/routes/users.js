@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var RedisClient = require('../redis_client')
 const { v4: uuidv4 } = require('uuid');
+var User = require('../models/user')
 
 function user_key(id){
   return `user:${id}`
@@ -31,6 +32,45 @@ router.get('/:id', async function(req, res, next) {
     return;
   }
   res.send({user: user});
+  
+});
+
+router.put('/:id', async function(req, res, next) {
+  let update_user = new User(req.body.user);
+  let id = req.params.id
+  let exists = await RedisClient.EXISTSAsync(user_key(id))
+  if(!exists){
+    res.sendStatus(404)
+    return;
+  }
+  update_user['id'] = id
+  for(let entry of Object.entries(update_user)){
+    console.log(JSON.stringify(entry))
+    await RedisClient.HSETAsync(user_key(id), entry[0], entry[1]);
+  }
+ 
+  
+  res.send({user: update_user});
+  
+});
+
+router.patch('/:id', async function(req, res, next) {
+  let id = req.params.id
+  let exists = await RedisClient.EXISTSAsync(user_key(id))
+
+  if(!exists){
+    res.sendStatus(404)
+    return;
+  }
+  
+  let dummy_user = new User({});
+  for(let key of Object.keys(dummy_user)){
+    console.log(key)
+    if(req.body.user[key]){
+      await RedisClient.HSETAsync(user_key(id), key, req.body.user[key]);
+    }
+  }
+  res.sendStatus(204)
   
 });
 
