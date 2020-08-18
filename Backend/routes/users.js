@@ -45,7 +45,6 @@ router.put('/:id', async function(req, res, next) {
   }
   update_user['id'] = id
   for(let entry of Object.entries(update_user)){
-    console.log(JSON.stringify(entry))
     await RedisClient.HSETAsync(user_key(id), entry[0], entry[1]);
   }
  
@@ -71,7 +70,7 @@ router.patch('/:id', async function(req, res, next) {
     }
   }
   res.sendStatus(204)
-  
+
 });
 
 module.exports = router;
