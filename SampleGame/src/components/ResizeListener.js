@@ -1,9 +1,6 @@
 class ResizeListener extends cc.Component {
     constructor() {
         super();
-        if (new.target === ResizeListener) {
-          throw new TypeError("Cannot construct Abstract instances directly");
-        }
     }
     onEnter() {
         super.onEnter();
