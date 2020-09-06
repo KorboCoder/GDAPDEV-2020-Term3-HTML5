@@ -5,18 +5,18 @@ class BackendRequest{
         request.setRequestHeader("Content-Type","application/json");
         request.onreadystatechange = function () {
             if (request.readyState == 4) {
-                //get status text
+                let result = {}
                 if(request.status >= 200 && request.status < 400){
-                    resolve({
-                        status: request.status,
-                        body: JSON.parse(request.response)
-                    })
+                    result.status = request.status
+                    if(request.status != 204){
+                        result.body = JSON.parse(request.response)
+                    }
+                    resolve(result)
                 }
                 else{
-                    reject({
-                        status: request.status,
-                        body: request.response
-                    })
+                    result.status = request.status
+                    result.body = request.response
+                    reject(result)
                 }
             }
         };
