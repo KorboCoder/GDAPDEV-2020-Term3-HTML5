@@ -1,4 +1,4 @@
-class BackendRequest{
+class BackendRequest {
     static _generateRequest(method, url, resolve, reject){
         let request = cc.loader.getXMLHttpRequest();
         request.open(method, url)
@@ -32,4 +32,38 @@ class BackendRequest{
         return getPromise;
     }
 
+    static Post(url, request_body){
+        let postPromise = new Promise(function(resolve, reject){
+            let request = BackendRequest._generateRequest("POST", url, resolve, reject);
+            request.send(JSON.stringify(request_body));
+        });
+        
+        return postPromise;
+    } 
+
+    static Patch(url, request_body){
+        let patchPromise = new Promise(function(resolve, reject){
+            let request = BackendRequest._generateRequest("PATCH", url, resolve, reject);
+            request.send(JSON.stringify(request_body));
+        });
+        
+        return patchPromise;
+    } 
+    static Put(url, request_body){
+        let putPromise = new Promise(function(resolve, reject){
+            let request = BackendRequest._generateRequest("PUT", url, resolve, reject);
+            request.send(JSON.stringify(request_body));
+        });
+        
+        return putPromise;
+    } 
+
+    static Delete(url){
+        let deletePromise = new Promise(function(resolve, reject){
+            let request = BackendRequest._generateRequest("DELETE", url, resolve, reject);
+            request.send();
+        });
+        
+        return deletePromise;
+    } 
 }
