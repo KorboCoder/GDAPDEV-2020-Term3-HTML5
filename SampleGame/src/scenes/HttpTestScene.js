@@ -13,41 +13,23 @@ class HttpTestScene extends cc.Scene{
     }
 
     async userCalls(){
-        let base_url = "http://localhost:3000"
-        let new_user = { user: {name: 'test'} }
         console.log("POST /users");
-        let user = await BackendRequest.Post(`${base_url}/users`, new_user)
-        .then((resp) => {
-            console.log(resp);
-            return resp.body.user;
-        }) 
-        // More down here...
-
+        let user = await UserApi.CreateUser({name: 'test'})
+        console.log(user)
 
         console.log("PATCH /users/:id");
-        await BackendRequest.Patch(`${base_url}/users/${user.id}`,  { user: { last_name: "test_last" } })
-        .then((resp) => {
-            console.log(resp);
-        })
-
+        await UserApi.PatchUser(user.id, { last_name: "test_last" })
 
         console.log("PUT /users/:id");
         user.name = "new_name"
-        user = await BackendRequest.Put(`${base_url}/users/${user.id}`, { user: user })
-        .then((resp) => {
-            console.log(resp);
-            return resp.body.user;
-        })
+        user = await UserApi.UpdateUser(user.id, user)
+        console.log(user)
 
         console.log("GET /users/:id");
-        user = await BackendRequest.Get(`${base_url}/users/${user.id}`)
-        .then((resp) => {
-            console.log(resp);
-            return resp.body.user;
-        })
+        user = await UserApi.GetUser(user.id);
 
         console.log("DELETE /users/:id");
-        await BackendRequest.Delete(`${base_url}/users/${user.id}`)
+        await UserApi.DeleteUser(user.id)
         .then((resp) => {
             console.log(resp);
         })
