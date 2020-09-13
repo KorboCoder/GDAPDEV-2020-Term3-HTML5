@@ -15,4 +15,24 @@ class UserService{
         })
     }
 
+    async loadUser(){
+        let userId = undefined
+        if(this.currentUser){
+            userId = this.currentUser.id
+        }
+        else{
+            userId = cc.sys.localStorage.getItem('current_user_id')
+        }
+        console.log(userId)
+        if(userId == undefined){
+            return Promise.reject(new Error("NotExisting"))
+        }
+
+        return await UserApi.GetUser(userId).then((loadedUser) => {
+            this.currentUser = loadedUser;
+            return this.currentUser;
+        })
+    }
+
+
 }
