@@ -7,7 +7,8 @@ class PortraitLayout extends ccui.RelativeBox{
     }
     onEnter(){
         super.onEnter();
-        let score = new ccui.Text("Score: 999", "Pixel", 36);
+        let user = UserService.getInstance().currentUser
+        let score = new ccui.Text(`User: ${user.name}\nScore: 999`, "Pixel", 36);
 
         let layoutParameter = new ccui.RelativeLayoutParameter();
         layoutParameter.setAlign(ccui.RelativeLayoutParameter.PARENT_TOP_CENTER_HORIZONTAL);
