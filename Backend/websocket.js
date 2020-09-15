@@ -5,7 +5,13 @@ const wsServer = new ws.Server({noServer: true, path: '/socket'});
 wsServer.on('connection', connection => {
     connection.on('message', message => {
       console.log(message);
-      connection.send(`${message}`);
+      wsServer.clients
+      .forEach(client => {
+          if (client != connection) {
+              client.send(`${message}`);
+          }    
+      });
+    });
     });
 })
 
