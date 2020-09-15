@@ -8,8 +8,8 @@ class WebsocketConnection{
     }
 
     StartConnection(){  
-        this.connection = new WebSocket("ws://mysterious-cliffs-16628.herokuapp.com/socket");
-        //this.connection = new WebSocket("ws://localhost:3000/socket");
+        //this.connection = new WebSocket("ws://mysterious-cliffs-16628.herokuapp.com/socket");
+        this.connection = new WebSocket("ws://localhost:3000/socket");
         this.connection.onopen = this.onOpen
         this.connection.onmessage = this.onMessage
         this.connection.onerror = this.onError
