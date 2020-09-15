@@ -18,6 +18,7 @@
     ],
     "jsList": [
         "src/lib/polyfill.js",
+        "src/lib/WebsocketConnection.js",
         "src/components/ResizeListener.js",
         "src/api/BackendRequest.js",
         "src/api/UserApi.js",
